@@ -3,9 +3,11 @@
     declare(strict_types=1);
 
     class Adherents{
-        public $nom = "Bonniot";
-        public $prenom = "Thomas";
-        public $dateDeNaissance = "21/07/1999";
+        private $nom = "Bonniot";
+        private $prenom = "Thomas";
+        private $dateDeNaissance = "21/07/1999";
+
+        private $idNormalise;
 
         /**
          * Adherents constructor.
@@ -13,11 +15,23 @@
          * @param string $prenom
          * @param string $dateDeNaissance
          */
-        public function __construct($nom, $prenom,$dateDeNaissance)
+
+        public function __construct($nom, $prenom, $dateDeNaissance)
         {
             $this->nom = $nom;
             $this->prenom = $prenom;
             $this->dateDeNaissance = $dateDeNaissance;
+        }
+        public function normaliserID($nom, $prenom, $dateDeNaissance){
+            $this->idNormalise =' ';
+        }
+
+        /**
+         * @return string
+         */
+        public function getIdNormalise(): string
+        {
+            return $this->idNormalise;
         }
     }
 ?>
