@@ -21,9 +21,11 @@
             $this->nom = $nom;
             $this->prenom = $prenom;
             $this->dateDeNaissance = $dateDeNaissance;
+            $this->normaliserID($nom,$prenom,$dateDeNaissance);
         }
-        public function normaliserID($nom, $prenom, $dateDeNaissance){
-            $this->idNormalise =' ';
+        public function normaliserID($nom, $prenom, $dateDeNaissance)
+        {
+            $this->idNormalise =$nom." ".$prenom." ".$dateDeNaissance;
         }
 
         /**
